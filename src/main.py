@@ -57,7 +57,7 @@ def main():
     print(BANNER)
     
     if args.file == None:
-        args.file = input("Please enter file path: ")
+        args.file = ""
 
     print("The selected path is: ", args.file)   
 
@@ -69,33 +69,28 @@ def main():
             args.encrypt = True
      
     qryptex = Qryptex(iterations=100_000) 
-
+    
     # ==================== ENCRYPTION MODE ====================    
     # Enter encrypt mode     
     if args.encrypt:        
         print(ENCRYPT_MODE)        
         if args.secret is None: 
             args.secret = input("Please enter secret to encrypt: ") 
-            if args.secret is None:
+            if not args.secret:
                 print("Error: Secret text cannot be empty.")
                 sys.exit(1)
         
         password = getpass.getpass("Set encryption password: ")
-        
+
         try:
             print("Encrypting data...")
-            encrypted_base64 = qryptex.encrypt(args.secret, password)
-            
-            #TODO 
-            # ADD QR LOGIC
-            #END TODO
-            
-            print("Encypted text: ",encrypted_base64)
+            qryptex.write_qr(args.secret, password)
+
             print(f"Success! Encrypted payload ready for QR Code (Saved to {args.file}).")
             
         except Exception as e:
             print(f"Encryption failed: {e}")
-            sys.exit(1)
+            sys.exit(1)                     
             
     # ==================== DECRYPTION MODE ====================           
     # Enter decrypt mode
@@ -104,12 +99,8 @@ def main():
         password = getpass.getpass("Enter decryption password: ")
 
         try:
-            print("🔍 Reading and decrypting...")
-            
-            # Simulation / TODO add to TEST and ADD QR reading function 
-            base64_payload = "FgXQ3ZwJz8XRkeDic0HgeEXaok8p8vvVbKMUxPUZu0RAokN/VGoRmvF1xVHoLRtLEmQ="   # content AZERTY and password 1234 for test 
-
-            decrypted_text = qryptex.decrypt(base64_payload, password)
+            print("Reading and decrypting...")            
+            decrypted_text = qryptex.read_qr(password=password)
             
             print("DECRYPTED DATA:")
             print(decrypted_text)
