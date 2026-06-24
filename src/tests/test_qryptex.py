@@ -1,5 +1,5 @@
 import pytest
-from src.qryptex import Qryptex
+from qryptex.qryptex import Qryptex
 
 SECRET_TEXTE = "Message secret super important"
 PASSWORD = "MonMotDePasseSecurise123!"

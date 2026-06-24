@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "qryptex"
+version = "0.0.1"
+authors = [
+  { name="mboss7", email="mboss7@matboss.eu" },
+]
+description = "Qryptex – Securely encrypt your recovery codes and text into encrypted QR codes."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+
+[project.urls]
+Homepage = "https://github.com/mboss7/Qryptex"
+Issues = "https://github.com/mboss7/Qryptex/issues"
