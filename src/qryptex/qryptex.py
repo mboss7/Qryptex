@@ -13,7 +13,7 @@ from pyzbar.pyzbar import decode
 
 class Qryptex:   
     
-    def __init__(self, iterations: int = 100_000, temp_path: str = r".\qr_output\qryptex"): 
+    def __init__(self, iterations: int = 100_000, temp_path: str = r".\qryptex"): 
         self.iterations = iterations
         self.temp_path = temp_path + ".png"
         self.pdf_path = temp_path + ".pdf"
