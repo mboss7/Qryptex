@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "qryptex"
-version = "0.0.4"
+version = "0.0.5"
 authors = [
   { name="mboss7", email="mboss7@matboss.eu" },
 ]
