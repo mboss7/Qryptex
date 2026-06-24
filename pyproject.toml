@@ -4,9 +4,9 @@ build-backend = "hatchling.build"
 
 [project]
 name = "qryptex"
-version = "0.0.5"
+version = "0.0.6"
 authors = [
-  { name="mboss7", email="mboss7@matboss.eu" },
+  { name="mboss7", email="contact@qryptex.eu" },
 ]
 description = "Qryptex – Securely encrypt your recovery codes and text into encrypted QR codes."
 readme = "README.md"
