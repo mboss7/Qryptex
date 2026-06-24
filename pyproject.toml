@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "qryptex"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
   { name="mboss7", email="mboss7@matboss.eu" },
 ]
@@ -18,6 +18,11 @@ classifiers = [
 license = "GPL-3.0-or-later"
 license-files = ["LICENSE"]
 
+dynamic = ["dependencies"]
+
 [project.urls]
 Homepage = "https://github.com/mboss7/Qryptex"
 Issues = "https://github.com/mboss7/Qryptex/issues"
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
