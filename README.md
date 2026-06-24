@@ -9,14 +9,14 @@ Qryptex – Securely encrypt your recovery codes and text into encrypted QR code
 git clone https://github.com/mboss7/Qryptex.git
 
 # Install dependencies:
-pip install -r .\Qryptex\requirements.txt
+pip install -r ./Qryptex/requirements.txt
 
 # Test app: 
-cd .\Qryptex\
+cd ./Qryptex/
 pytest
 
 # run CLI APP:
-python .\Qryptex\src\qryptex\main.py
+python ./Qryptex/src/qryptex/main.py
 ```
 
 # Python module 

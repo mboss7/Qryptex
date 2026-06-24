@@ -18,6 +18,9 @@ class Qryptex:
         self.temp_path = temp_path + ".png"
         self.pdf_path = temp_path + ".pdf"
         
+    def __repr__(self):
+        return '{self.__class__.__name__}(iterations: {self.iterations}, temp_path: {self.temp_path}, pdf_path: {self.pdf_path})'.format(self=self)
+        
     def write_qr(self, secret_to_crypt, password, pdf_path = None):
         encrypted_base64 = self._encrypt(secret_to_crypt, password)
         self._generate_qr(encrypted_base64)
