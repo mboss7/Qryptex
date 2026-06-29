@@ -1,6 +1,8 @@
 # Qryptex
 Qryptex – Securely encrypt your recovery codes and text into encrypted QR codes.
 
+![logo_qryptex](img/logo/logo_qryptex.jpeg "logo_qryptex")
+
 
 # CLI APP
 
@@ -18,6 +20,10 @@ pytest
 # run CLI APP:
 python ./Qryptex/src/qryptex/main.py
 ```
+
+![cli_qryptex](img/cli_qryptex.png "cli_qryptex")
+
+
 
 # Python module 
 

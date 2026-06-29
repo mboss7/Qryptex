@@ -1,5 +1,5 @@
 import argparse
-import textwrap
+#import textwrap
 import sys
 import getpass
 from qryptex import Qryptex
@@ -14,7 +14,7 @@ BANNER = r"""
  \___\_\_|  \_\    |_|  |_|      |_|  |______| /_/ \_\ 
 =======================================================
 
-Welcom in Qryptex by mboss7
+Welcome in Qryptex by mboss7
 
 repos: https://github.com/mboss7/Qryptex
 
