@@ -1,0 +1,17 @@
+cffi==2.0.0
+charset-normalizer==3.4.7
+colorama==0.4.6
+cryptography==49.0.0
+iniconfig==2.3.0
+numpy==2.5.0
+opencv-python==4.13.0.92
+packaging==26.2
+pillow==12.2.0
+pluggy==1.6.0
+pycparser==3.0
+Pygments==2.20.0
+pypdf==6.14.1
+pytest==9.1.1
+pyzbar==0.1.9
+qrcode==8.2
+reportlab==5.0.0
