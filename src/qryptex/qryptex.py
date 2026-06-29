@@ -2,6 +2,7 @@ import base64
 import os
 import qrcode
 import io
+import sys
 from PIL import Image
 from pypdf import PdfReader
 from hashlib import pbkdf2_hmac
