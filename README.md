@@ -46,3 +46,26 @@ qtx.write_qr(<your_secret>, <your_password>)
 # Read encrypted QR : 
 qtx.read_qr(<your_password>, <your_qr_path>)
 ```
+
+# To test wife security good practices : 
+
+Use docker, with temporary container (It a good practice for everything you test and you want to isolate) : 
+```shell
+    docker run --rm -it python:3.11-slim bash  # isolated python env in docker
+	
+	# or 
+	
+	docker run --rm -it ubuntu:latest bash   # isolated ubuntu env in docker 
+
+```
+
+
+# Feature in the roadmap : 
+
+0) Security advises. 
+
+1) Web API in order to do that every where you have an internet connection. 
+
+2) Add TOTP and 2FA support. 
+
+3) Docker support and container ready tu use.
