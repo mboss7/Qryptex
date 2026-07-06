@@ -3,6 +3,7 @@ import os
 import qrcode
 import io
 import sys
+import uvicorn
 from PIL import Image
 from pypdf import PdfReader
 from hashlib import pbkdf2_hmac
@@ -10,6 +11,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from pyzbar.pyzbar import decode
+from fastapi import FastAPI, Query
 
 
 class Qryptex:   
@@ -21,12 +23,41 @@ class Qryptex:
         
     def __repr__(self):
         return '{self.__class__.__name__}(iterations: {self.iterations}, temp_path: {self.temp_path}, pdf_path: {self.pdf_path})'.format(self=self)
+
+
+    def q_api(self):
+        """
+        Run Qryptex FastAPI app 
+        """
+
+
+        app = FastAPI()
+
+        @app.get("/")
+        def read_root():
+            return r"Welcome to Qryptex API !"
         
+        @app.get("/genqr/")
+        def gen_qr(secret: str = Query(..., description="text to crypt"),
+                   password: str = Query(..., description= "password")):
+            encrypted_base64 = self._encrypt(secret, password)
+            return {"encrypted": encrypted_base64}
+
+
+        uvicorn.run(app, host="127.0.0.1", port=8000)
+
+
     def write_qr(self, secret_to_crypt, password, pdf_path = None):
+        
+        """
+        """
         encrypted_base64 = self._encrypt(secret_to_crypt, password)
         self._generate_qr(encrypted_base64)
     
     def read_qr(self, password, pdf_path = None):
+        
+        """
+        """
         if pdf_path is None:
             pdf_path = self.pdf_path
             
