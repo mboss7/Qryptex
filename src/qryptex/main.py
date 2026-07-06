@@ -1,6 +1,6 @@
 import argparse
-#import textwrap
 import sys
+import os
 import getpass
 from qryptex import Qryptex
 
@@ -51,13 +51,23 @@ def main():
     parser.add_argument('-d', '--decrypt', action='store_true', help="decypt Qryptex to plain text")
     parser.add_argument('-f', '--file', help="path to the input or output file")    
     parser.add_argument('-s', '--secret', help="secret to crypt from plain text to Qryptex")
-     
+    parser.add_argument('-a', '--api',action='store_true', help="run api web app")
+    
     args = parser.parse_args()
+    
+
+    qryptex = Qryptex(iterations=100_000) 
+
+    if args.api:
+        qryptex.q_api()
+        
+    
     
     print(BANNER)
     
-    if args.file == None:
-        args.file = ""
+    
+    if args.file is None:
+        args.file = os.getcwd()
 
     print("The selected path is: ", args.file)   
 
@@ -68,7 +78,7 @@ def main():
         else:
             args.encrypt = True
      
-    qryptex = Qryptex(iterations=100_000) 
+
     
     # ==================== ENCRYPTION MODE ====================    
     # Enter encrypt mode     
