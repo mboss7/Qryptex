@@ -50,6 +50,7 @@ class Qryptex:
     def write_qr(self, secret_to_crypt, password, pdf_path = None):
         
         """
+        generate qr with secret and password"
         """
         encrypted_base64 = self._encrypt(secret_to_crypt, password)
         self._generate_qr(encrypted_base64)
@@ -57,6 +58,7 @@ class Qryptex:
     def read_qr(self, password, pdf_path = None):
         
         """
+        read qr with password and qr path
         """
         if pdf_path is None:
             pdf_path = self.pdf_path

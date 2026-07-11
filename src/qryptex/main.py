@@ -57,12 +57,16 @@ def main():
     
 
     qryptex = Qryptex(iterations=100_000) 
-
+    
+    
     if args.api:
-        qryptex.q_api()
-        
-    
-    
+        try: 
+            qryptex.q_api()
+        except():
+            print("API CRASH !")
+        finally:
+            sys.exit(0)
+
     print(BANNER)
     
     
