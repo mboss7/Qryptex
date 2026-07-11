@@ -23,6 +23,22 @@ python ./Qryptex/src/qryptex/main.py
 
 ![cli_qryptex](img/cli_qryptex.png "cli_qryptex")
 
+## FastAPI
+
+To run Qrypotex API with CLI:
+```shell
+python main.py -a
+```
+
+To test it with powershell:
+```powershell
+
+irm "http://127.0.0.1:8000/crypt/?secret=v1&password=v2"
+```
+Or with bash:
+```bash 
+curl -s "http://127.0.0.1:8000/crypt/?secret=v1&password=v2"
+```
 
 
 # Python module 
@@ -47,7 +63,7 @@ qtx.write_qr(<your_secret>, <your_password>)
 qtx.read_qr(<your_password>, <your_qr_path>)
 ```
 
-# To test wife security good practices : 
+# To test security good practices : 
 
 Use docker, with temporary container (It a good practice for everything you test and you want to isolate) : 
 ```shell
