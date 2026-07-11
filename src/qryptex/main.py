@@ -59,6 +59,8 @@ def main():
     qryptex = Qryptex(iterations=100_000) 
     
     
+    print(BANNER)
+    
     if args.api:
         try: 
             qryptex.q_api()
@@ -67,7 +69,6 @@ def main():
         finally:
             sys.exit(0)
 
-    print(BANNER)
     
     
     if args.file is None:

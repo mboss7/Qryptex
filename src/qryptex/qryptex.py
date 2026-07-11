@@ -37,8 +37,8 @@ class Qryptex:
         def read_root():
             return r"Welcome to Qryptex API !"
         
-        @app.get("/genqr/")
-        def gen_qr(secret: str = Query(..., description="text to crypt"),
+        @app.get("/crypt/")
+        def crypt(secret: str = Query(..., description="text to crypt"),
                    password: str = Query(..., description= "password")):
             encrypted_base64 = self._encrypt(secret, password)
             return {"encrypted": encrypted_base64}
