@@ -25,7 +25,7 @@ python ./Qryptex/src/qryptex/main.py
 
 ## FastAPI
 
-To run Qrypotex API with CLI:
+To run Qryptex API with CLI:
 ```shell
 python main.py -a
 ```
@@ -63,7 +63,7 @@ qtx.write_qr(<your_secret>, <your_password>)
 qtx.read_qr(<your_password>, <your_qr_path>)
 ```
 
-# To test security good practices : 
+# To test with security good practices : 
 
 Use docker, with temporary container (It a good practice for everything you test and you want to isolate) : 
 ```shell
