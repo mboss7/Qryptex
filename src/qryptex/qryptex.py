@@ -44,7 +44,7 @@ class Qryptex:
             return {"encrypted": encrypted_base64}
 
 
-        uvicorn.run(app, host="127.0.0.1", port=8000)
+        uvicorn.run(app, host="0.0.0.0", port=8000)
 
 
     def write_qr(self, secret_to_crypt, password, pdf_path = None):
