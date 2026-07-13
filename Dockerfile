@@ -23,4 +23,4 @@ EXPOSE 8000
 
 # 8. La commande qui se lance au démarrage du conteneur
 # Remplacez "main.py" par le script principal de votre application
-CMD ["python", "main.py", "-a"]
+CMD ["python", "src/qryptex/main.py", "-a"]
