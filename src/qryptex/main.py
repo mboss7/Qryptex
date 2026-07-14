@@ -61,6 +61,7 @@ def main():
     
     print(BANNER)
     
+    #======================= API MODE =========================
     if args.api:
         try: 
             qryptex.q_api()

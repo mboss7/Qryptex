@@ -4,6 +4,17 @@ Qryptex – Securely encrypt your recovery codes and text into encrypted QR code
 ![logo_qryptex](img/logo/logo_qryptex.jpeg "logo_qryptex")
 
 
+# Docker app
+
+```shell
+#temporary container in order test the app qryptex
+docker run -it --rm -p 8000:8000 mboss7/qryptex:latest
+
+curl -s "http://127.0.0.1:8000/crypt/?secret=v1&password=v2"
+# output excepted : >>>{"encrypted":"QyeY2cPopsxdl9c9ZQ14RqHKiHXE9lypu06j/ssSnIbjazo98T1P8BWxgaoYxQ=="}
+```
+
+ 
 # CLI APP
 
 ```shell 
