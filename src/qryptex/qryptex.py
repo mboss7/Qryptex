@@ -12,7 +12,7 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from pyzbar.pyzbar import decode
 from fastapi import FastAPI, Query
-
+from fastapi.responses import FileResponse
 
 class Qryptex:   
     
@@ -43,6 +43,19 @@ class Qryptex:
             encrypted_base64 = self._encrypt(secret, password)
             return {"encrypted": encrypted_base64}
 
+        @app.get("/generate")
+        def generate_qr(secret: str = Query(..., description="text to crypt"),
+                   password: str = Query(..., description= "password")):
+            self.write_qr(secret, password)
+    
+            if not os.path.exists(self.pdf_path):
+                return {"error": "pdf not found"}
+        
+            return FileResponse(
+                path=self.pdf_path,
+                media_type="application/pdf",
+                filename="generated_qr.pdf"
+        )
 
         uvicorn.run(app, host="0.0.0.0", port=8000)
 

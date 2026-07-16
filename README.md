@@ -12,6 +12,10 @@ docker run -it --rm -p 8000:8000 mboss7/qryptex:latest
 
 curl -s "http://127.0.0.1:8000/crypt/?secret=v1&password=v2"
 # output excepted : >>>{"encrypted":"QyeY2cPopsxdl9c9ZQ14RqHKiHXE9lypu06j/ssSnIbjazo98T1P8BWxgaoYxQ=="}
+
+# or to generate qr open this link in navigator : 
+http://127.0.0.1:8000/generate/?secret=v1&password=v2  
+
 ```
 
  
