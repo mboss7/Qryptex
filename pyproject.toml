@@ -27,7 +27,7 @@ dependencies = [
 	"numpy==2.5.0",
 	"opencv-python==4.13.0.92",
 	"packaging==26.2",
-	"pillow==12.2.0",
+	"pillow==12.3.0",
 	"pluggy==1.6.0",
 	"pycparser==3.0",
 	"Pygments==2.20.0",
